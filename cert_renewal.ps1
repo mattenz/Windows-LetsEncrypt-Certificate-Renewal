@@ -14,7 +14,7 @@ Import-Module acmesharp
 $certpath = "c:\certs"
 
 #I use Azure DNS so below I configure the connection parameters for connecting to Azure DNS
-$azurepassword = cat "<hashed password file>" | ConvertTo-SecureString -Key (3,4,2,3,56,34,254,222,1,1,2,23,42,54,33,233,1,34,2,7,6,5,35,43) # take my hashed password from file and convert it into a readable password for PowerShell
+$azurepassword = cat "<hashed password file>" | ConvertTo-SecureString -Key (<hash key>) # take my hashed password from file and convert it into a readable password for PowerShell
 $azureuser = "<azure username>"
 $azurecreds = New-Object -TypeName System.Management.Automation.PSCredential -argumentlist $azureuser, $azurepassword
 
